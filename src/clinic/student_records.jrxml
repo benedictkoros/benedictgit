@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a364f23a-c5c1-4a0c-b636-b757826d7392">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT * FROM medication]]>
+	</queryString>
+	<field name="AdmNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="First_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Last_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Test_Type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disease" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Comment" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Drugs_Issued" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="event" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="551" height="75" uuid="6670ed33-8712-446c-8b7a-020fafa6d839"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="2" y="86" width="551" height="22" forecolor="#0033FF" uuid="99f1bb25-7a32-4e77-a2b5-790cccbd3ad4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[KENYA INSTITUTE OF MASS COMMUNICATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="108" width="550" height="18" forecolor="#0033CC" uuid="48449548-9dcd-4792-bdf3-912c3cfb5026"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[P.O BOX 42422 -00100, NAIROBI. TEL:254 0206551555, Cell: 0708262895]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="126" width="180" height="20" forecolor="#666600" uuid="8110e35a-ac53-4bf6-ae13-c937ade1b28d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Treatment Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="214" y="0" width="218" height="75" uuid="6c03159f-6cd8-479f-9af2-909d2a6275b6"/>
+				<imageExpression><![CDATA["C:\\kimc\\src\\kimc\\img\\kimclogo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="c65b1f09-3680-4868-8750-0d36cd0fcadc"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Row" x="0" y="0" width="79" height="15" forecolor="#0033FF" uuid="7b66aad9-7a08-47b3-b822-26fecbc6b37b"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[AdmNo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Row" x="79" y="0" width="79" height="15" forecolor="#0033FF" uuid="7cb73619-de0d-4507-bc09-418ffd1bfd5b"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Row" x="158" y="0" width="79" height="15" forecolor="#0033FF" uuid="8dbc9c43-7caa-4604-ae5d-6033f2ef52d0"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Row" x="237" y="0" width="79" height="15" forecolor="#0033FF" uuid="5392a4e3-9b97-4643-95f7-e0f583663def"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Test Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Row" x="316" y="0" width="79" height="15" forecolor="#0033FF" uuid="e70a16ed-51b0-44e6-a19a-a2bfa8608420"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Comments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Row" x="395" y="0" width="79" height="15" forecolor="#0033FF" uuid="02f951f2-ef96-4062-bf61-d57ec7fdc80e"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Drugs Issued]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Row" x="488" y="0" width="65" height="15" forecolor="#0033FF" uuid="fdc093a3-1baf-44be-8115-41ba3771f5d0"/>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="17f0acb7-fcfa-4cc6-afba-23b59c91fff5"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="0" y="0" width="79" height="15" uuid="facc112a-bfc8-411e-a717-8a5581772977"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{AdmNo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="79" y="0" width="79" height="15" uuid="5321787c-e170-4af8-9cb1-a9e8a3fd64dc"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{First_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="158" y="0" width="79" height="15" uuid="1cbd3866-f624-4f1b-9660-e380492b42bb"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Last_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="237" y="0" width="79" height="15" uuid="d1bb9e0f-e411-4cbe-82ae-38b653b376d9"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Test_Type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="316" y="0" width="79" height="15" uuid="b9b4eacc-a56b-4693-bead-20d4bf1365f5"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Comment}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="395" y="0" width="79" height="15" uuid="43ebf983-4192-4287-8b41-dc2ef2107ae7"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Drugs_Issued}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Row" x="474" y="0" width="79" height="15" uuid="5f35dca1-428d-4810-b2fe-158043460b11"/>
+					<textElement markup="styled">
+						<font isUnderline="false"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f2bf70c7-8846-4771-9ce2-f5f9559a7e8e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="19b8fa84-c5f0-4a2c-8d6a-d482a1ad8123"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="c41edbe4-d223-451d-8bed-075e304b583b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="eadee331-778f-4e3e-894b-13ccf23778dc"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="2ad867cb-3714-4066-b31b-45df851250db"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

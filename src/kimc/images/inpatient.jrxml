@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inpatient" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     inpatientdata.`Patient_Id` AS inpatientdata_Patient_Id,
+     inpatientdata.`First Name` AS inpatientdata_First_Name,
+     inpatientdata.`Surname` AS inpatientdata_Surname,
+     inpatientdata.`Gender` AS inpatientdata_Gender,
+     inpatientdata.`Phone_no` AS inpatientdata_Phone_no,
+     inpatientdata.`Occupation` AS inpatientdata_Occupation,
+     inpatientdata.`Status` AS inpatientdata_Status,
+     inpatientdata.`Account_type` AS inpatientdata_Account_type,
+     inpatientdata.`Date_of_Birth` AS inpatientdata_Date_of_Birth,
+     inpatientdata.`Admmision date` AS inpatientdata_Admmision_date
+FROM
+     `inpatientdata` inpatientdata]]>
+	</queryString>
+	<field name="inpatientdata_Patient_Id" class="java.lang.String"/>
+	<field name="inpatientdata_First_Name" class="java.lang.String"/>
+	<field name="inpatientdata_Surname" class="java.lang.String"/>
+	<field name="inpatientdata_Gender" class="java.lang.String"/>
+	<field name="inpatientdata_Phone_no" class="java.lang.Integer"/>
+	<field name="inpatientdata_Occupation" class="java.lang.String"/>
+	<field name="inpatientdata_Status" class="java.lang.String"/>
+	<field name="inpatientdata_Account_type" class="java.lang.String"/>
+	<field name="inpatientdata_Date_of_Birth" class="java.lang.String"/>
+	<field name="inpatientdata_Admmision_date" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="27">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="26" forecolor="#006600"/>
+				<textElement textAlignment="Center" lineSpacing="Single">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[St. Michael Hosipital]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="32" height="26"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\Hosi\\src\\images\\Home.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36">
+			<staticText>
+				<reportElement x="0" y="0" width="144" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PO BOX 1360-90115]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="16" width="100" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAIROBI]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="387" y="0" width="155" height="20" forecolor="#0033FF"/>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="64" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="0" width="60" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="65" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Surname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="0" width="56" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="0" width="70" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="0" width="72" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Occupation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="0" width="72" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="0" width="83" height="20" forecolor="#006600"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admision Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="64" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_Patient_Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_First_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="65" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_Surname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="0" width="56" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_Gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="0" width="70" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{inpatientdata_Phone_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_Occupation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_Date_of_Birth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="0" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#00CCCC"/>
+					<topPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<leftPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<bottomPen lineWidth="1.0" lineColor="#00CCCC"/>
+					<rightPen lineWidth="1.0" lineColor="#00CCCC"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inpatientdata_Admmision_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+	<summary>
+		<band height="42"/>
+	</summary>
+</jasperReport>

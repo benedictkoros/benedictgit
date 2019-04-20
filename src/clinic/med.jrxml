@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3780c536-0f26-4445-8bfd-82f988c11447">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="PieChartDataset" uuid="f5b8f0c9-dff7-429c-9836-38089d184ea2"/>
+	<queryString>
+		<![CDATA[SELECT disease, COUNT(*) AS c FROM medication GROUP BY disease HAVING c>0 ORDER BY c DESC]]>
+	</queryString>
+	<field name="disease" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="c" class="java.lang.Long"/>
+	<background>
+		<band height="555" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="199" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="4" y="138" width="798" height="29" forecolor="#0000CC" uuid="39d5c68c-361d-4dbc-b36e-6c1f1f4f3792"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[P.O BOX 42422 -00100, NAIROBI. TEL:254 0206551555, Cell: 0708262895]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="4" y="109" width="798" height="29" forecolor="#0000FF" uuid="95914080-cc0a-4713-a3e8-2599ff35fc59"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[KENYA INSTITUTE OF MASS COMMUNICATION]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="338" y="183" width="121" height="16" forecolor="#000000" uuid="fa3a3a1c-b711-45e1-9505-1cfcd79c3564"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="338" y="2" width="431" height="107" uuid="c1cc55e0-cd4b-4bde-a578-8e06978dda0e"/>
+				<imageExpression><![CDATA["C:\\kimc\\src\\clinic\\kimclogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="4" y="169" width="798" height="14" forecolor="#0000CC" uuid="e71e11d2-911b-4a63-8fc5-8c6835974e90"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Diagnosed Student Report ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<frame>
+				<reportElement x="113" y="0" width="575" height="14" uuid="0edea685-ec0e-479c-babc-11b379cdb9da"/>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="0" width="287" height="14" forecolor="#000000" uuid="6a129e6b-f33b-42e3-b1a3-a6c830aee76e"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" isUnderline="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[Diagnosis]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="287" y="0" width="287" height="14" forecolor="#000000" uuid="7127b445-8adb-4bce-9719-9d1d60c77569"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="12" isBold="true" isUnderline="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[Total Number of Students]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="113" y="14" width="575" height="1" uuid="ed03398b-92d4-47c0-9bf4-4110260e3d9e"/>
+			</line>
+			<frame>
+				<reportElement x="113" y="0" width="575" height="14" uuid="76a45a5f-c6ae-45b9-b2e7-e6b037c4d06c"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="287" height="14" uuid="9d202d9d-e453-4163-9517-2c151d7cf2cb"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{disease}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="287" y="0" width="287" height="14" uuid="d2055f2b-1d85-4e8e-b8bb-ba636db50bf7"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="c1316a03-ada1-41c3-a6fb-a89c248fc18f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="800" height="16" forecolor="#D0B48E" backcolor="#006699" uuid="b01f0a83-b8b4-469d-b7d4-c636207a9551"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="753" y="0" width="40" height="16" forecolor="#FFFFFF" uuid="8a02f15a-1034-49d2-abb8-914ecfeb18a5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="673" y="0" width="80" height="16" forecolor="#FFFFFF" uuid="e2bb2afb-d992-4b49-8590-590768099462"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
